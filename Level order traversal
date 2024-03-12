@@ -1,0 +1,42 @@
+import java.util.*;
+class node{
+    int data;
+    node left;
+    node right;
+    node(int data){
+        this.data=data;
+        this.left=null;
+        this.right=null;
+    }}
+public class stacklevelorder {
+public static void main(String args[]){
+node root=new node(1);
+root.left=new node(2);
+root.right=new node(3);
+root.left.left=new node(4);
+root.left.right=new node(5);
+inorder(root);
+}
+    
+    
+public static void inorder(node root){
+    
+     Stack<node> q=new Stack<>();
+     q.add(root);
+     while(!q.isEmpty()){
+        node n=q.pop();
+        System.out.print(n.data+"->");
+        if(n.left!=null){
+            q.push(n.left);
+           }
+        if(n.right!=null){
+            
+            q.push(n.right);
+         }
+      
+     
+     
+     
+    }
+}}
+
